@@ -1,0 +1,12 @@
+<h1>Ongoing site</h1>
+<p>Previous visitors:</p>
+	<p>
+<%= social_share_button_tag("11", :url => "http://myapp.com/foo/bar") %>
+
+
+	</p>
+<ul>
+<% @entries1.each do |entry| %>
+  <li>Name: <%= entry.name %>   UNIQUE CODE: <%= entry.unique %> Number of friends: <%= entry.friend %></li>
+<% end %>
+</ul>

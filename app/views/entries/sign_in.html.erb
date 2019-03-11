@@ -1,0 +1,5 @@
+<%= form_tag :action => 'sign_in' do %>
+   <p>Enter your name: <%= text_field_tag 'visitor_name', @name %>  </p>
+   <%= submit_tag 'Sign in' %>
+<% end %>
+<p><%= link_to "goto", welcome_path(@unique_hex)%></p>
