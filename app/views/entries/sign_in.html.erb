@@ -1,32 +1,7 @@
 
-  <body>
-  <section>
-    <!-- Navigation -->
-
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
-    <div class="container">
-      <a class="navbar-brand" href="#">Bebefit</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <h1 class="mt-5">Bebefit Prelaunch</h1>
-          <p>Resolves the pain on your shoulder with toggler</p>
-        </div>
-      </div>
-    </div>
-
+ 
 
 <%= form_tag :action => 'sign_in' do %>
     <p><%= text_field_tag 'visitor_name', @name %>  </p>
     <%= submit_tag 'Sign in' %>
 <% end %>
-
-
-
-</section>
-</body>
