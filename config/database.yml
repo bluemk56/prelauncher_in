@@ -27,9 +27,18 @@ development:
   adapter: postgresql
   database: prelaunchr_in_development
   host: localhost
+#  username: leesungyong
+#  password: zummums0
+  username: postgres
+  password: zummums0
+
 test:
   adapter: postgresql
   database: prelaunchr_in_test
   host: localhost
+  username: postgres
+  password: zummums0
 production:
   url: <%= ENV['DATABASE_URL'] %>
+  username: postgres
+  password: zummums0
