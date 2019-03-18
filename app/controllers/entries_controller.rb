@@ -8,7 +8,9 @@ class EntriesController < ApplicationController
     obj_ref=Entry.find_by(unique: ref);
 	  valid= Entry.find_by(unique: ref).nil? # true==> fake false==> real
   puts " 1.5 ----------------------------------->#{@email.blank?}  #{Entry.find_by(email: @email).nil?} "
+
 	if !(@email.blank?)
+    if @email.match(URI::MailTo::EMAIL_REGEXP).present?
     if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
     	@entry= Entry.create({:email => @email, :unique => @unique_hex})	
@@ -23,6 +25,10 @@ class EntriesController < ApplicationController
     end
     redirect_to(:action => 'welcome', :email => @email)
   end
+  puts "------------------->1"
+  end
+  puts "----------------->2"
+
 end
 
 
@@ -30,6 +36,8 @@ def welcome
   email= params[:email];
   full_numb_ref= 20;
   @user= Entry.find_by(email: email)
+  @unique= @user.unique
+  puts "-------------------------------------------___>>>>>>>>>>>>>>> #{@unique}"
   @percentage= @user.friend*(100/full_numb_ref);
 puts "----------------------11-------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@user.friend}*5  #{@percentage}"
 	@entries1= Entry.all
