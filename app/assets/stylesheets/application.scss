@@ -30,6 +30,9 @@ body {
   margin: 0px;
     font-family: "Open Sans", Sans-serif;
 }
+
+.progress {background: rgba(245, 245, 245, 1); border: 3px solid rgba(245, 245, 245, 1); border-radius: 6px; height: 10px;}
+.progress-bar-custom {background: rgba(66, 139, 202, 1);}
 .special_input {
   width: 40%;
   padding: 4px;
