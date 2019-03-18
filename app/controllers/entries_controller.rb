@@ -1,34 +1,35 @@
 class EntriesController < ApplicationController
   def sign_in
-  	@name= params[:visitor_name]
-    puts "1------------------------------------> #{@name}"
+#  	@name= params[:visitor_name]
+    @email= params[:email]
+    puts "1------------------------------------> #{@email}"
   	ref_e= params[:id].nil?; # true-->nothing in url, false--> something in url
   	ref= params[:id];
     obj_ref=Entry.find_by(unique: ref);
 	  valid= Entry.find_by(unique: ref).nil? # true==> fake false==> real
-  puts " 1.5 ----------------------------------->#{@name.blank?}  #{Entry.find_by(name: @name).nil?} "
-	if !(@name.blank?)
-    if (Entry.find_by(name: @name).nil?) 
+  puts " 1.5 ----------------------------------->#{@email.blank?}  #{Entry.find_by(email: @email).nil?} "
+	if !(@email.blank?)
+    if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
-    	@entry= Entry.create({:name =>@name, :unique => @unique_hex})	
+    	@entry= Entry.create({:email => @email, :unique => @unique_hex})	
      
       if !(valid) && !(ref_e) 		
 	  		obj_ref=Entry.find_by(unique: ref);
       	obj_ref.friend ||= 0;
 	  		obj_ref.friend= obj_ref.friend+1;
 	  		obj_ref.update({:friend => obj_ref.friend});
-        @entry.update({:wrefered => obj_ref.name});
+        @entry.update({:wrefered => obj_ref.email});
   		end
     end
-    redirect_to(:action => 'welcome', :name => @name)
+    redirect_to(:action => 'welcome', :email => @email)
   end
 end
 
 
 def welcome
-  name= params[:name];
+  email= params[:email];
   full_numb_ref= 20;
-  @user= Entry.find_by(name: name)
+  @user= Entry.find_by(email: email)
   @percentage= @user.friend*(100/full_numb_ref);
 puts "----------------------11-------->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@user.friend}*5  #{@percentage}"
 	@entries1= Entry.all
