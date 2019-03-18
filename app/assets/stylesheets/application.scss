@@ -30,6 +30,13 @@ body {
   margin: 0px;
     font-family: "Open Sans", Sans-serif;
 }
+.special_input {
+  width: 40%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
 
 h1,
 h2,

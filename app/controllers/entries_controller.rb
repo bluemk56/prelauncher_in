@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
   puts " 1.5 ----------------------------------->#{@email.blank?}  #{Entry.find_by(email: @email).nil?} "
 
 	if !(@email.blank?)
-    if @email.match(URI::MailTo::EMAIL_REGEXP).present?
+     if @email.match(URI::MailTo::EMAIL_REGEXP).present?
     if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
     	@entry= Entry.create({:email => @email, :unique => @unique_hex})	
@@ -24,7 +24,7 @@ class EntriesController < ApplicationController
   		end
     end
     redirect_to(:action => 'welcome', :email => @email)
-  end
+   end
   puts "------------------->1"
   end
   puts "----------------->2"
