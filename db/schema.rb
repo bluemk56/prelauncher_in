@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_025605) do
+ActiveRecord::Schema.define(version: 2019_03_15_192708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_025605) do
     t.datetime "updated_at", null: false
     t.string "unique"
     t.integer "friend"
+    t.string "wrefered"
   end
 
 end

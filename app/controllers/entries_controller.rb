@@ -6,12 +6,6 @@ class EntriesController < ApplicationController
   	ref= params[:id];
     obj_ref=Entry.find_by(unique: ref);
 	  valid= Entry.find_by(unique: ref).nil? # true==> fake false==> real
-
-#	if  valid= Entry.find_by(unique: ref).nil? 
-#	 render "entries/unknown"
-#	end
-#	  puts	"------------------------------>>>>>>> #{ref}, #{valid} "
-#  	unless @name.blank?    #false, Entry.find_b(name: @name).nil? true,-->
   puts " 1.5 ----------------------------------->#{@name.blank?}  #{Entry.find_by(name: @name).nil?} "
 	if !(@name.blank?)
     if (Entry.find_by(name: @name).nil?) 
@@ -20,9 +14,10 @@ class EntriesController < ApplicationController
      
       if !(valid) && !(ref_e) 		
 	  		obj_ref=Entry.find_by(unique: ref);
-      	obj_ref.friend ||= 0
+      	obj_ref.friend ||= 0;
 	  		obj_ref.friend= obj_ref.friend+1;
 	  		obj_ref.update({:friend => obj_ref.friend});
+        @entry.update({:wrefered => obj_ref.name});
   		end
     end
     redirect_to(:action => 'welcome', :name => @name)
