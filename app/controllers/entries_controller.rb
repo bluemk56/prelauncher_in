@@ -7,14 +7,16 @@ class EntriesController < ApplicationController
   	ref= params[:id];
     obj_ref=Entry.find_by(unique: ref);
 	  valid= Entry.find_by(unique: ref).nil? # true==> fake false==> real
-  puts " 1.5 ----------------------------------->#{@email.blank?}  #{Entry.find_by(email: @email).nil?} "
+
+    puts " 1.5 ----------------------------------->sentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsent "
 
 	if !(@email.blank?)
+
      if @email.match(URI::MailTo::EMAIL_REGEXP).present?
     if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
-    	@entry= Entry.create({:email => @email, :unique => @unique_hex})	
-     
+      UserMailer.signup_confirmation(@email).deliver
+      @entry= Entry.create({:email => @email, :unique => @unique_hex})	
       if !(valid) && !(ref_e) 		
 	  		obj_ref=Entry.find_by(unique: ref);
       	obj_ref.friend ||= 0;
