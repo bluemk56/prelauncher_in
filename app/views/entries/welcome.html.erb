@@ -33,12 +33,54 @@
       end
       %>
 
+<div class="prizes">
+  <ul class="products clearfix">
+    <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards"></p></li>
+    <li class="product brandon  ">
+      <div class="circle">5</div>
+      <div class="sep"></div>
+      <p>Prize<br>Item 1</p>
 
-<div class="progress" style="margin: 10px 100px 5px 100px;" >
-	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-  		aria-valuemin="0" aria-valuemax="100" style="width: <%= @percentage%>%">
- 		<%= @user.friend%>
- 	</div>
+      <div class="tooltip">
+        <img src="/refer/cream-tooltip@2x.png" height="254">
+      </div>
+    </li>
+    <li class="product brandon  ">
+      <div class="circle">10</div>
+      <div class="sep"></div>
+      <p>Prize<br>Item 2</p>
+
+      <div class="tooltip">
+        <img src="/refer/truman@2x.png" height="254">
+      </div>
+    </li>
+    <li class="product brandon  ">
+      <div class="circle">25</div>
+      <div class="sep"></div>
+      <p>Prize<br>Item 3</p>
+
+      <div class="tooltip">
+        <img src="/refer/winston@2x.png" height="254">
+      </div>
+    </li>
+    <li class="product brandon  last">
+      <div class="circle">50</div>
+      <div class="sep"></div>
+      <p>Prize<br>Item 4</p>
+
+      <div class="tooltip">
+        <img src="/refer/blade-explain@2x.png" height="254">
+      </div>
+    </li>
+  </ul>
+
+  <div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+        aria-valuemin="0" aria-valuemax="100" style="width: <%= @percentage%>%">
+      <%= @user.friend%>
+    </div>
+  </div>
+
 </div>
 
 <div class="col-lg-12 text-center">
