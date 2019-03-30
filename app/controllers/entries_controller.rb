@@ -13,7 +13,7 @@ class EntriesController < ApplicationController
      if @email.match(URI::MailTo::EMAIL_REGEXP).present?
     if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
-    	@entry= Entry.create({:email => @email, :unique => @unique_hex})	
+    	@entry= Entry.create({:email => @email, :unique => @unique_hex, :ip => request.remote_ip})
      
       if !(valid) && !(ref_e) 		
 	  		obj_ref=Entry.find_by(unique: ref);
@@ -35,6 +35,10 @@ end
 def welcome
   email= params[:email];
   full_numb_ref= 20;
+  ip = request.remote_ip
+  puts ":::::::::::::"
+  puts ip
+  puts request
   @user= Entry.find_by(email: email)
   @unique= @user.unique
   puts "-------------------------------------------___>>>>>>>>>>>>>>> #{@unique}"
