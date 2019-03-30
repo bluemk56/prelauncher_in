@@ -98,7 +98,7 @@ config.action_mailer.smtp_settings = {
   port:                 587,
   domain:               'bebefit.io',
   user_name:            'bluemk56@gmail.com',
-  password:             '1q2w3e4r!!',
+  password:             'zummums0',
   authentication:       'plain',
   enable_starttls_auto: true }
 end
