@@ -10,13 +10,18 @@ class EntriesController < ApplicationController
 
     puts " 1.5 ----------------------------------->sentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsent "
 
-	if !(@email.blank?)
+    @visited = false
+    if Entry.find_by(ip: request.remote_ip)
+      @visited = true
+    end
 
+	if !@email.blank? && !@visited
      if @email.match(URI::MailTo::EMAIL_REGEXP).present?
     if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
       UserMailer.signup_confirmation(@email).deliver
-      @entry= Entry.create({:email => @email, :unique => @unique_hex})	
+    	@entry= Entry.create({:email => @email, :unique => @unique_hex, :ip => request.remote_ip})
+     
       if !(valid) && !(ref_e) 		
 	  		obj_ref=Entry.find_by(unique: ref);
       	obj_ref.friend ||= 0;
