@@ -868,6 +868,16 @@ and (max-width : 480px) {
   font-weight: 500
 }
 
+.prizes .products li.product.selected .circle {
+  background: #5cb85c !important;
+  border-color: #5cb85c !important;
+  color: #FFF !important
+}
+
+.prizes .products li.product.selected p {
+  color: #5cb85c !important
+}
+
 @media (min-width: 768px) {
   .prizes {
     width: 768px;
