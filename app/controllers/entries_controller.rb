@@ -9,7 +9,12 @@ class EntriesController < ApplicationController
 	  valid= Entry.find_by(unique: ref).nil? # true==> fake false==> real
   puts " 1.5 ----------------------------------->#{@email.blank?}  #{Entry.find_by(email: @email).nil?} "
 
-	if !(@email.blank?)
+    @visited = false
+    if Entry.find_by(ip: request.remote_ip)
+      @visited = true
+    end
+
+	if !@email.blank? && !@visited
      if @email.match(URI::MailTo::EMAIL_REGEXP).present?
     if (Entry.find_by(email: @email).nil?) 
       @unique_hex= SecureRandom.hex(10);
