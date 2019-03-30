@@ -7,7 +7,8 @@ class EntriesController < ApplicationController
   	ref= params[:id];
     obj_ref=Entry.find_by(unique: ref);
 	  valid= Entry.find_by(unique: ref).nil? # true==> fake false==> real
-  puts " 1.5 ----------------------------------->#{@email.blank?}  #{Entry.find_by(email: @email).nil?} "
+
+    puts " 1.5 ----------------------------------->sentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsent "
 
     @visited = false
     if Entry.find_by(ip: request.remote_ip)
