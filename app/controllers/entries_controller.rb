@@ -40,10 +40,6 @@ end
 def welcome
   email= params[:email];
   full_numb_ref= 20;
-  ip = request.remote_ip
-  puts ":::::::::::::"
-  puts ip
-  puts request
   @user= Entry.find_by(email: email)
   @unique= @user.unique
   puts "-------------------------------------------___>>>>>>>>>>>>>>> #{@unique}"
