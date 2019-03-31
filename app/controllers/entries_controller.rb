@@ -10,19 +10,31 @@ class EntriesController < ApplicationController
 
     puts " 1.5 ----------------------------------->sentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsent "
 
+    entry = Entry.find_by(:session => session.id)
+    if entry&.email.present?
+      redirect_to(:action => 'welcome', :email => entry.email)
+    end
+
     @visited = !Entry.find_by(ip: request.remote_ip).nil?
 
     if @email.present? && @email.match(URI::MailTo::EMAIL_REGEXP).present?
       entry = Entry.find_by(email: @email)
 
       if @visited && entry
+        entry.update({:session => session.id})
         redirect_to(:action => 'welcome', :email => @email)
       end
 
       if !@visited && entry.nil?
         @unique_hex = SecureRandom.hex(10)
         UserMailer.signup_confirmation(@email).deliver
-        @entry = Entry.create({:email => @email, :unique => @unique_hex, :ip => request.remote_ip})
+
+        @entry = Entry.create({
+          :email => @email,
+          :unique => @unique_hex,
+          :ip => request.remote_ip,
+          :session => session.id
+        })
 
         if !(valid) && !(ref_e)
           obj_ref = Entry.find_by(unique: ref)
