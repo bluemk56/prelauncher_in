@@ -43,10 +43,10 @@ body {
     font-family: "Open Sans", Sans-serif;
 }
 .middle-line{
-    font-size: 16px;
+    font-size: 24px;
     color: #555556;
     font-weight: 600;
-    line-height: 25px;
+    line-height: 44px;
 }
 
 .title_custom{
@@ -205,7 +205,7 @@ section {
 
 
 header#landing {
-    background-image: url("landing_main1.jpg");
+    background-image: url("landing_main3.png");
     background-repeat: none;
     background-attachment: scroll;
     background-position: center center;
@@ -1000,13 +1000,4 @@ and (max-width : 480px) {
 
 h3.visited {
   color:#fff;
-}
-$size: 24px;
-
-.social-share-button {
-  .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
-  }
 }
