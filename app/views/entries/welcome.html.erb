@@ -8,7 +8,8 @@
         <h3 class="middle-line" style=" ">Share your unique link via social media,<br/> Get Bebefit's goods for each friend who signs up</h3>
         <h3 class="copy-link brandon"style="font-size: 14px;">prelaunch.bebefit.io/<%=@unique%></h3>
 				<div class=".social-share-button .ssb-icon">
-        <p><%= social_share_button_tag("I'm so excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!\n\n", :url => "http://prelaunch.bebefit.io/#{@unique}, desc: @unique") %></p>
+
+          <p><%= social_share_button_tag("I'm so excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!  \n\n prelaunch.bebefit.io/#{@unique}", desc: "So excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!  \n\n prelaunch.bebefit.io/#{@unique}", :url => "prelaunch.bebefit.io/#{@unique}") %></p>
         </div>
 				</div>
 
@@ -112,7 +113,7 @@
   	<li>Name: <%= entry.name %>   UNIQUE CODE: <%= entry.unique %> Number of friends: <%= entry.friend %></li>
 	<% end %>
 </ul>
-
+        <p><%= social_share_button_tag("I'm so excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!\n\n", :url => "http://prelaunch.bebefit.io/#{@unique}") %></p>
 <% end %>
 
 
