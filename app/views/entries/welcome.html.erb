@@ -3,8 +3,10 @@
 	<div class="container">
 		<div class="slider-container">
 			<div class="intro-text">
-				<div class="intro-lead-in">Share It, and Get It</div>
-				<div class="intro-heading">Share It, and Get It</div>
+			
+				<div class="intro-heading"style=" color: #074E6F;font-size: 60px;text-transform: none; font-weight: 500;">Share It, and Get It</div>
+        <h3 class="middle-line" style=" ">Share your unique link via social media,<br /> Get Bebefit's goods for each friend who signs up</h3>
+        <h3 class="copy-link brandon"style="font-size: 14px;">prelaunch.bebefit.io/<%=@unique%></h3>
 				<p><%= social_share_button_tag("I'm so excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!\n\n", :url => "http://localhost:3000/entries/sign_in/#{@unique}") %></p>
 					</div>
 
@@ -15,7 +17,7 @@
 <div class="row">
 	<div class="col-md-12 text-center">
 			<div class="section-title">
-				<h3>Here is how we do it</h3>
+				<p class= "title_custom middle-line" style= "font-weight: 600; text-transform: none; font-size: 20px;">Here's how it works:</p>
 			</div>
 	</div>
 	
@@ -34,12 +36,12 @@
       %>
 
 <div class="prizes">
-  <ul class="products clearfix">
-    <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards"></p></li>
+  <ul class="products clearfix" style="margin-top: 0px">
+    <li class="title brandon"><p class="title_custom friends" style="font-weight: 600;">Friends Joined</p><p class="rewards"></p></li>
     <li class="product brandon  ">
       <div class="circle">5</div>
       <div class="sep"></div>
-      <p>Prize<br>Item 1</p>
+      <p>40% OFF<br>Coupon</p>
 
       <div class="tooltip">
         <img src="/refer/cream-tooltip@2x.png" height="254">
@@ -48,7 +50,7 @@
     <li class="product brandon  ">
       <div class="circle">10</div>
       <div class="sep"></div>
-      <p>Prize<br>Item 2</p>
+      <p>50% OFF<br>Coupon</p>
 
       <div class="tooltip">
         <img src="/refer/truman@2x.png" height="254">
@@ -57,7 +59,7 @@
     <li class="product brandon  ">
       <div class="circle">25</div>
       <div class="sep"></div>
-      <p>Prize<br>Item 3</p>
+      <p>70% OFF<br>Coupon</p>
 
       <div class="tooltip">
         <img src="/refer/winston@2x.png" height="254">
@@ -66,7 +68,7 @@
     <li class="product brandon  last">
       <div class="circle">50</div>
       <div class="sep"></div>
-      <p>Prize<br>Item 4</p>
+      <p>Bebefit<br> for free</p>
 
       <div class="tooltip">
         <img src="/refer/blade-explain@2x.png" height="254">
@@ -86,13 +88,13 @@
 <div class="col-lg-12 text-center">
 	<div class="section-title">
 		<% if @user.friend == 0 %>
-		<h3><span>No</span> friends have joined...Yet!</h3>
+		<p class="title_custom friends" style="margin-top:0px;margin-bottom: 0px;"><span style="color: #7a0101;">No</span> friends have joined...Yet!</p>
 		<% else %>
-		<h3><span><%= @user.friend %></span> <%= words %> joined</h3>	
+		<p class="title_custom friends" style="text-transform: none; font-weight: bold; margin-top:0px; margin-bottom: 0px; font-size: 20px;"><span style="color: #7a0101;"><%= @user.friend %></span> <%= words %> joined</p>	
 		<% end %>
 
-		<p style="margin-top: 5px;">Keep checking</p>
-		<p style= "margin-bottom: 0px;">We ship to the U.S. & Canada</p>		
+		<p style="margin-top: 0px;">Keep checking...</p>
+		<p style= "margin-bottom: 0px; margin-top: 50px;">We ship to the U.S. & Canada</p>		
 		</div>
 	</div>
 </div>
