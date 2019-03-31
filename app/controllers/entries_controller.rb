@@ -2,14 +2,12 @@ class EntriesController < ApplicationController
   def sign_in
     #  	@name= params[:visitor_name]
     @email = params[:email]
-    puts "1------------------------------------> #{@email}"
-    ref_e = params[:id].nil? # true-->nothing in url, false--> something in url
+      ref_e = params[:id].nil? # true-->nothing in url, false--> something in url
     ref = params[:id]
     obj_ref = Entry.find_by(unique: ref)
     valid = Entry.find_by(unique: ref).nil? # true==> fake false==> real
 
-    puts " 1.5 ----------------------------------->sentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsentsent "
-
+    
     entry = Entry.find_by(:session => session.id)
     if entry&.email.present?
       redirect_to(:action => 'welcome', :email => entry.email)
