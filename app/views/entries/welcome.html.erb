@@ -36,7 +36,7 @@
 <div class="prizes">
   <ul class="products clearfix">
     <li class="title brandon"><p class="friends">Friends Joined</p><p class="rewards"></p></li>
-    <li class="product brandon  ">
+    <li class="product brandon <% if @percentage >= 25 %>selected<% end %>">
       <div class="circle">5</div>
       <div class="sep"></div>
       <p>Prize<br>Item 1</p>
@@ -45,7 +45,7 @@
         <img src="/refer/cream-tooltip@2x.png" height="254">
       </div>
     </li>
-    <li class="product brandon  ">
+    <li class="product brandon <% if @percentage >= 50 %>selected<% end %>">
       <div class="circle">10</div>
       <div class="sep"></div>
       <p>Prize<br>Item 2</p>
@@ -54,8 +54,8 @@
         <img src="/refer/truman@2x.png" height="254">
       </div>
     </li>
-    <li class="product brandon  ">
-      <div class="circle">25</div>
+    <li class="product brandon <% if @percentage >= 75 %>selected<% end %>">
+      <div class="circle">15</div>
       <div class="sep"></div>
       <p>Prize<br>Item 3</p>
 
@@ -63,8 +63,8 @@
         <img src="/refer/winston@2x.png" height="254">
       </div>
     </li>
-    <li class="product brandon  last">
-      <div class="circle">50</div>
+    <li class="product brandon <% if @percentage >= 100 %>selected<% end %> last">
+      <div class="circle">20</div>
       <div class="sep"></div>
       <p>Prize<br>Item 4</p>
 
