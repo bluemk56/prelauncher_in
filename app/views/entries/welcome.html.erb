@@ -7,8 +7,10 @@
 				<div class="intro-heading"style=" color: #074E6F;font-size: 60px;text-transform: none; font-weight: 500;">Share It, and Get It</div>
         <h3 class="middle-line" style=" ">Share your unique link via social media,<br /> Get Bebefit's goods for each friend who signs up</h3>
         <h3 class="copy-link brandon"style="font-size: 14px;">prelaunch.bebefit.io/<%=@unique%></h3>
-				<p><%= social_share_button_tag("I'm so excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!\n\n", :url => "http://localhost:3000/entries/sign_in/#{@unique}") %></p>
-					</div>
+				<div class=".social-share-button .ssb-icon">
+        <p><%= social_share_button_tag("I'm so excited for @Bebefit to open! Check it out if you are interested in Smart parenting!!\n\n", :url => "http://prelaunch.bebefit.io/#{@unique}") %></p>
+        </div>
+				</div>
 
 		</div>
 	</div>
