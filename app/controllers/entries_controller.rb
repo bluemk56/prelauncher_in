@@ -20,8 +20,9 @@ class EntriesController < ApplicationController
     if @email.present? && @email.match(URI::MailTo::EMAIL_REGEXP).present?
       entry = Entry.find_by(email: @email)
 
-      if @visited && entry
-        entry.update({:session => session.id})
+      if @visited && !(entry.nil?)
+         entry.update({:session => session.id})
+
         redirect_to(:action => 'welcome', :email => @email)
       end
 
@@ -46,6 +47,7 @@ class EntriesController < ApplicationController
 
         redirect_to(:action => 'welcome', :email => @email)
       end
+# malicious user
     end
   end
 
