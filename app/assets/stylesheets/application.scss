@@ -15,13 +15,13 @@
  *= require social-share-button
 */
 
-$size: 50px;
+$size: 28px;
 
 .social-share-button {
   .ssb-icon {
-    background-size: $size $size;
-    height: $size;
-    width: $size;
+    background-size: $size $size !important;
+    height: $size !important;
+    width: $size !important;
   }
 }
 
