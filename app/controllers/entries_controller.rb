@@ -8,23 +8,40 @@ class EntriesController < ApplicationController
     valid = Entry.find_by(unique: ref).nil? # true==> fake false==> real
 
     
-    entry = Entry.find_by(:session => session.id)
-    if entry&.email.present?
-      redirect_to(:action => 'welcome', :email => entry.email)
-    end
-
     @visited = !Entry.find_by(ip: request.remote_ip).nil?
+    session_entry = Entry.find_by(:session => session.id)
+#  if entry&.email.present?
+#     redirect_to(:action => 'welcome', :email => entry.email)
+#  end
 
+# => visited T
+# =>    session T  ==> happens ==> should redirect to welcome
+
+# =>        email T ===> normal user
+# =>        email F ===> possible crazyness
+# =>    session F  ==> happens ==> COOKIE erase
+# =>        email T ==> normal use 
+# =>        email F ==> ?
+# => visted F
+# =>    session T ==> happens should redirect to welcome
+# =>        email T  ==> nomal user
+# =>        email F  ==> 
+# =>    session F ==> normal user
+# =>        email T
+# =>        email F
+# =>        
+# =>        when vistied && session is true email is false ==> then do something about it
     if @email.present? && @email.match(URI::MailTo::EMAIL_REGEXP).present?
       entry = Entry.find_by(email: @email)
+#      if @visited && !(entry.nil?)
+      if !(entry.nil?)
+      UserMailer.signup_confirmation(@email).deliver
 
-      if @visited && !(entry.nil?)
-         entry.update({:session => session.id})
-
+        entry.update({:session => session.id})
         redirect_to(:action => 'welcome', :email => @email)
       end
-
-      if !@visited && entry.nil?
+      if entry.nil?
+#      if !@visited && entry.nil?
         @unique_hex = SecureRandom.hex(10)
         UserMailer.signup_confirmation(@email).deliver
 

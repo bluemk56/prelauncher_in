@@ -4,6 +4,7 @@
     <title>Bebefit Prelaunch Campaign</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,16 +14,18 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div style="overflow-x: hidden;">
+    <nav class="navbar navbar-fixed-top">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll custom_position" style="margin-left: -330px; margin-top: -20px;">
-          <a id= "logo" class="navbar-brand page-scroll" style="    position:absolute;top:10px; left:10px;" href="#page-top"><%= image_tag("logo1.png") %></a>
+          <a id= "logo" class="navbar-brand page-scroll" ><%= image_tag("logo1.png") %></a>
         </div>
       </div>
       <!-- /.container-fluid -->
     </nav>
 
     <%= yield %>
+    </div>
   </body>
 </html>

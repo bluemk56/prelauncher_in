@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-default from: "bluemk56@gmail.com"
+default from: "bebefit@goodmonit.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -9,7 +9,7 @@ default from: "bluemk56@gmail.com"
   	    puts "----------------------------------------__>>>>>>>>>>>>>>>>>>>>>>>>>>>>   mailer!!!!"
    @email= email
 
-    mail to: @email, subject: "Sign up confirmation"
+    mail to: @email, subject: "Share with your friend about Bebefit, and Get Bebefit Coupon for Each friend who signs up!"
     puts "----------------------------------------__>>>>>>>>>>>>>>>>>>>>>>>>>>>>   mailer!!!!"
   end
 end
