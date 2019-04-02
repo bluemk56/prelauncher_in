@@ -924,6 +924,12 @@ font-size: 11px;
   .prizes .progress {
     width: 100%;
   }
+  .prizes .products li p {
+    font-size: 12px;
+  }
+  .prizes .products li.title .friends {
+    font-size:13px !important;
+  }
 }
 
 @media (min-width: 500px) {
@@ -947,6 +953,12 @@ font-size: 11px;
   }
   .prizes .progress {
     width: 90%;
+  }
+  .prizes .products li p {
+    font-size: 13px;
+  }
+  .prizes .products li.title .friends {
+    font-size:17px !important;
   }
 }
 
@@ -981,6 +993,9 @@ font-size: 11px;
   .prizes .products li.product {
     width: 80px;
     margin-right: 60px;
+  }
+  .prizes .products li p {
+    font-size: 14px;
   }
 }
 
