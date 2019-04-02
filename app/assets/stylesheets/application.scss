@@ -901,6 +901,66 @@ font-size: 11px;
   color: #074E6F !important
 }
 
+@media (min-width: 375px) {
+  .prizes {
+    width: 375px;
+    margin: 20px auto 30px;
+    padding: 0 0px;
+  }
+
+  .prizes .products li.title {
+    margin-right: 2px;
+    width: 75px;
+  }
+
+  .prizes .products li.product {
+    width: 69px;
+    margin-right: 4px;
+  }
+
+  .prizes .products li.title .friends {
+    margin-top: -10px;
+  }
+}
+
+@media (min-width: 500px) {
+  .prizes {
+    width: 510px;
+    margin: 0 auto;
+  }
+
+  .prizes .products li.title {
+    margin-right: 19px;
+    width: 90px;
+  }
+
+  .prizes .products li.product {
+    width: 75px;
+    margin-right: 10px;
+  }
+
+  .prizes .products li.title .friends {
+    margin-top: -10px;
+  }
+}
+
+@media (min-width: 620px) {
+  .prizes {
+    width: 630px;
+    margin: 0 auto;
+  }
+
+  .prizes .products li.title {
+    margin-right: 20px;
+    width: 150px;
+  }
+
+  .prizes .products li.product {
+    width: 80px;
+    margin-right: 20px;
+  }
+}
+
 @media (min-width: 768px) {
   .prizes {
     width: 768px;
@@ -950,6 +1010,9 @@ font-size: 11px;
     width: 95px;
     margin-right: 95px;
   }
+  .prizes .products li.title .friends {
+    margin-top: 7px;
+  }
 }
 
 @media (min-width: 1100px) {
@@ -995,6 +1058,7 @@ h3.visited {
     line-height: 4rem;
   }
 }
+
 @media (min-width: 992px) {
   .masthead {
     height: 100vh;
