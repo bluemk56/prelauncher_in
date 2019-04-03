@@ -909,17 +909,17 @@ font-size: 11px;
   }
 
   .prizes .products li.title {
-    margin-right: 2px;
+    margin-right: 10px;
     width: 75px;
   }
 
   .prizes .products li.product {
-    width: 69px;
+    width: 67px;
     margin-right: 4px;
   }
 
   .prizes .products li.title .friends {
-    margin-top: -10px;
+    margin: -10px 0 -3px 0;
   }
   .prizes .progress {
     width: 100%;
@@ -939,18 +939,15 @@ font-size: 11px;
   }
 
   .prizes .products li.title {
-    margin-right: 19px;
+    margin-right: 23px;
     width: 90px;
   }
 
   .prizes .products li.product {
-    width: 75px;
+    width: 74px;
     margin-right: 10px;
   }
 
-  .prizes .products li.title .friends {
-    margin-top: -10px;
-  }
   .prizes .progress {
     width: 90%;
   }
@@ -969,7 +966,8 @@ font-size: 11px;
   }
 
   .prizes .products li.title {
-    margin-right: 20px;
+    _margin-right: 20px;
+    margin-right: 5px;
     width: 150px;
   }
 
@@ -996,6 +994,9 @@ font-size: 11px;
   }
   .prizes .products li p {
     font-size: 14px;
+  }
+  .prizes .products li.title .friends {
+    margin: -10px 0 0 0;
   }
 }
 
